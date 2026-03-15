@@ -15,6 +15,7 @@ class ButtonCommand:
         root.destroy()
         app.returnStatement = "settings"
 
+
 # main_menu function
 def main_menu(app):
 
