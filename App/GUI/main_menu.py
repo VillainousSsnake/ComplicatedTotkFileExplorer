@@ -40,9 +40,9 @@ def main_menu(app):
     fileDropdown.add_option(option="Open", command=lambda: print("Open"))
     fileDropdown.add_option(option="Save", command=lambda: print("Save"))
 
-    dropdown3 = CustomDropdownMenu(widget=settingsCascade)
-    dropdown3.add_option(option="Configure", command=lambda: ButtonCommand.open_settings(root, app))
-    dropdown3.add_option(option="Update", command=lambda: print("Update"))
+    settingsDropdown = CustomDropdownMenu(widget=settingsCascade)
+    settingsDropdown.add_option(option="Configure", command=lambda: ButtonCommand.open_settings(root, app))
+    settingsDropdown.add_option(option="Update", command=lambda: print("Update"))
 
     # TODO: Code goes here
 
