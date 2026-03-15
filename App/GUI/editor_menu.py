@@ -17,7 +17,6 @@ def editor_menu(app):
 
         print("the list isn't empty")   # TODO: Add functionality
 
-
     # Creating root window
     root = ctk.CTk()
     root.title("Configure Settings...  ")
