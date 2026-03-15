@@ -21,3 +21,6 @@ while app.returnStatement != "exit":
 
         case "settings":    # Settings Menu
             Index.settings_menu(app)
+
+        case "editor":  # Editor Menu
+            Index.editor_menu(app)
