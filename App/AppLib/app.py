@@ -12,3 +12,4 @@ class App:
         self.settings = {
             "current_theme": Config.get_setting("current_theme"),
         }
+        self.open_files = []
