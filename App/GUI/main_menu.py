@@ -7,6 +7,14 @@ import customtkinter as ctk
 from CTkMenuBar import *
 
 
+# Class for button commands
+class ButtonCommand:
+
+    @staticmethod
+    def open_settings(root, app):
+        root.destroy()
+        app.returnStatement = "settings"
+
 # main_menu function
 def main_menu(app):
 
@@ -32,7 +40,7 @@ def main_menu(app):
     fileDropdown.add_option(option="Save", command=lambda: print("Save"))
 
     dropdown3 = CustomDropdownMenu(widget=settingsCascade)
-    dropdown3.add_option(option="Configure", command=lambda: print("Configure"))
+    dropdown3.add_option(option="Configure", command=lambda: ButtonCommand.open_settings(root, app))
     dropdown3.add_option(option="Update", command=lambda: print("Update"))
 
     # TODO: Code goes here
