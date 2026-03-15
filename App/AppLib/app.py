@@ -13,3 +13,4 @@ class App:
             "current_theme": Config.get_setting("current_theme"),
         }
         self.open_files = []
+        self.supported_files = [("Text File", ('*.txt')), ("All files", "*.*")]
