@@ -18,3 +18,6 @@ while app.returnStatement != "exit":
 
         case "main":  # Main Menu
             Index.main_menu(app)
+
+        case "settings":    # Settings Menu
+            Index.settings_menu(app)
