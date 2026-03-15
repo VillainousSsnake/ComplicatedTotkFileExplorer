@@ -15,6 +15,11 @@ class ButtonCommand:
         root.destroy()
         app.returnStatement = "settings"
 
+    @staticmethod
+    def open_editor(root, app):
+        root.destroy()
+        app.returnStatement = "editor"
+
 
 # main_menu function
 def main_menu(app):
@@ -37,8 +42,8 @@ def main_menu(app):
     settingsCascade = menu.add_cascade("Settings")
 
     fileDropdown = CustomDropdownMenu(widget=fileCascade)
-    fileDropdown.add_option(option="Open", command=lambda: print("Open"))
-    fileDropdown.add_option(option="Save", command=lambda: print("Save"))
+    fileDropdown.add_option(option="Open File", command=lambda: ButtonCommand.open_editor(root, app))
+    fileDropdown.add_option(option="Open Folder", command=lambda: print("Open Folder"))
 
     settingsDropdown = CustomDropdownMenu(widget=settingsCascade)
     settingsDropdown.add_option(option="Configure", command=lambda: ButtonCommand.open_settings(root, app))
