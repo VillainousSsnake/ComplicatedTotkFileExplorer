@@ -3,6 +3,7 @@
 
 # Importing modules and libraries:
 import customtkinter as ctk
+from App.AppLib.config import Config
 
 
 # settings_menu function
@@ -20,6 +21,10 @@ def settings_menu(app):
 
     # Assigning the buttons on the tkinter window top bar
     root.protocol("WM_DELETE_WINDOW", on_close)
+
+    # Getting settings dictionary
+    all_settings = Config.get_all_settings()
+    print(all_settings)    # TODO: Remove print statement
 
     # TODO: Code goes here
 
