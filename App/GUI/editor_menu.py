@@ -8,6 +8,16 @@ import customtkinter as ctk
 # editor_menu function
 def editor_menu(app):
 
+    # Detecting if the open files list is empty
+    if not app.open_files:  # If the list is empty
+
+        print("list is empty")  # TODO: Add functionality
+
+    else:   # If the list is full
+
+        print("the list isn't empty")   # TODO: Add functionality
+
+
     # Creating root window
     root = ctk.CTk()
     root.title("Configure Settings...  ")
