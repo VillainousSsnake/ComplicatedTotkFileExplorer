@@ -5,6 +5,7 @@
 # Importing modules and libraries:
 import customtkinter as ctk
 from CTkMenuBar import *
+from tkinter import filedialog
 
 
 # Class for button commands
@@ -16,7 +17,33 @@ class ButtonCommand:
         app.returnStatement = "settings"
 
     @staticmethod
-    def open_editor(root, app):
+    def open_editor(root, app, explorerType):
+        """
+        Opens the editor menu
+        :param root: CTk Root Window
+        :param app: App Object
+        :param explorerType: String obj. OPTIONS: 'file' - selects one file, 'folder' - opens folder
+        """
+
+        # Detecting which filedialog needs to be launched
+        match explorerType:
+
+            case 'file':    # Opening a single file
+
+                # Adding a file to the open files list
+                app.open_files.append(
+                    filedialog.askopenfilename(
+                        title="Open a file...",
+                        filetypes=app.supported_files
+                    )
+                )
+
+            case 'folder':  # Opening a whole folder
+                pass    # TODO: Stub
+
+            case _:
+                print("Throw Error")    # TODO: Add throw error functionality
+
         root.destroy()
         app.returnStatement = "editor"
 
@@ -42,7 +69,7 @@ def main_menu(app):
     settingsCascade = menu.add_cascade("Settings")
 
     fileDropdown = CustomDropdownMenu(widget=fileCascade)
-    fileDropdown.add_option(option="Open File", command=lambda: ButtonCommand.open_editor(root, app))
+    fileDropdown.add_option(option="Open File", command=lambda: ButtonCommand.open_editor(root, app, "file"))
     fileDropdown.add_option(option="Open Folder", command=lambda: print("Open Folder"))  # TODO: Implement cmd
 
     settingsDropdown = CustomDropdownMenu(widget=settingsCascade)
