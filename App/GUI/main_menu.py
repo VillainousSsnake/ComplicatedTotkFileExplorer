@@ -43,11 +43,11 @@ def main_menu(app):
 
     fileDropdown = CustomDropdownMenu(widget=fileCascade)
     fileDropdown.add_option(option="Open File", command=lambda: ButtonCommand.open_editor(root, app))
-    fileDropdown.add_option(option="Open Folder", command=lambda: print("Open Folder"))
+    fileDropdown.add_option(option="Open Folder", command=lambda: print("Open Folder")) # TODO: Implement cmd
 
     settingsDropdown = CustomDropdownMenu(widget=settingsCascade)
     settingsDropdown.add_option(option="Configure", command=lambda: ButtonCommand.open_settings(root, app))
-    settingsDropdown.add_option(option="Update", command=lambda: print("Update"))
+    settingsDropdown.add_option(option="Update", command=lambda: print("Update"))   # TODO: Implement cmd
 
     # TODO: Code goes here
 
