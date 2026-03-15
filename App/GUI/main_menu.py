@@ -13,6 +13,8 @@ class ButtonCommand:
 
     @staticmethod
     def open_settings(root, app):
+
+        # Destroying the root and launchign settings
         root.destroy()
         app.returnStatement = "settings"
 
@@ -44,6 +46,7 @@ class ButtonCommand:
             case _:
                 print("Throw Error")    # TODO: Add throw error functionality
 
+        # Destroying root and launching editor
         root.destroy()
         app.returnStatement = "editor"
 
